@@ -1,7 +1,6 @@
 import { pool, db } from "../db.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import mysql from "mysql";
 
 export const justinfo = async (req, res) => {
   try {
