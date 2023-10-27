@@ -40,18 +40,19 @@ export const register = (req, res) => {
 
 export const registerAsync = async (req, res) => {
   try{
-    const { username, email, password, role, premium } = req.body;
+    const { idsupermarket, username, email, password, role, premium } = req.body;
     const [checkExistingUser] = await pool.query('SELECT * FROM user WHERE email = ? OR username = ?', [email, username])
     if(checkExistingUser.length) return res.status(409).json('User already exists!')
 
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(password, salt);
 
-    const [result] = await pool.query( 'INSERT INTO user (username, email, password, role, premium) VALUES (?, ?, ?, ?, ?)', 
+    const [result] = await pool.query( 'INSERT INTO user (idsupermarket, username, email, password, role, premium) VALUES (?, ?, ?, ?, ?, ?)', 
     [username, email, hash, role, premium])
 
     res.send({
         id: result.insertId,
+        idsupermarket,
         username,
         email,
         role,
