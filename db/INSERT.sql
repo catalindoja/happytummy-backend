@@ -6,9 +6,9 @@ INSERT INTO user VALUES (10,10,"alex","1234","example1@gmail.com",1,TRUE, "image
 INSERT INTO user VALUES (11,11,"samer","1234","example1@gmail.com",2,TRUE, "image", "https://cdn.icon-icons.com/icons2/2574/PNG/512/profile_picture_user_icon_153847.png");
 INSERT INTO user VALUES (12,12,"catalin","1234","example1@gmail.com",3,TRUE, "image", "https://cdn.icon-icons.com/icons2/2574/PNG/512/profile_picture_user_icon_153847.png");
 
-INSERT INTO paymenthistory VALUES (10,10,3,CURRENT_DATE(),3);
-INSERT INTO paymenthistory VALUES (11,11,4,CURRENT_DATE(),4);
-INSERT INTO paymenthistory VALUES (12,12,5,CURRENT_DATE(),5);
+INSERT INTO PaymentHistory VALUES (10,10,3,CURRENT_DATE(),3);
+INSERT INTO PaymentHistory VALUES (11,11,4,CURRENT_DATE(),4);
+INSERT INTO PaymentHistory VALUES (12,12,5,CURRENT_DATE(),5);
 
 INSERT INTO category VALUES (10, "carne fresca", "image", "https://us.123rf.com/450wm/captainvector/captainvector1602/captainvector160264584/53052537-carne-cruda.jpg?ver=6");
 INSERT INTO category VALUES (11, "vegetales", "image", "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/fruit-and-vegetable-logo-design-template-614ae09920c8e6921f625ee6c93e64de_screen.jpg?ts=1671469104");
