@@ -172,3 +172,15 @@ export const logout = (req, res) => {
     secure:true
   }).status(200).json("User has been logged out.")
 };
+
+export const checkExistingUserByMail = async (req, res) => {
+  try{
+    const [rows] = await pool.query('SELECT * FROM user WHERE email = ?', [req.body.email])
+    if(rows.length) return res.status(409).json('User already exists!')
+    else return res.status(200).json('User does not exist')
+  } catch(error){
+    return res.status(500).json({
+      message: 'Something went wrong while retrieving the users'
+    })
+  } 
+}
