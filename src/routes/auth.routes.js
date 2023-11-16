@@ -10,6 +10,6 @@ router.get("/info", justinfo)
 router.post("/register", registerAsync);
 router.post("/login", loginAsync);
 router.post("/logout", logout);
-router.get("/userexists", checkExistingUserByMail)
+router.post("/userexists", checkExistingUserByMail)
 
 export default router;
