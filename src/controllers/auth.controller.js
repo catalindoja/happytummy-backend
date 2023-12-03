@@ -67,7 +67,7 @@ export const registerAsync = async (req, res) => {
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(password, salt);
 
-    const [result] = await pool.query( 'INSERT INTO user (idsupermarket, username, email, password, role, premium, age, gender, realname, realsurname, country) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', 
+    const [result] = await pool.query( 'INSERT INTO user (idsupermarket, username, email, password, role, premium, age, gender, realname, realsurname, country) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', 
     [idsupermarket, username, email, hash, role, premium, age, gender, realname, realsurname, country])
 
     res.send({
