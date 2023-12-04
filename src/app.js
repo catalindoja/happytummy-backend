@@ -24,6 +24,8 @@ import shoppingListRoutes from './routes/shoppinglist.routes.js'
 import favBrandRoutes from './routes/favbrand.routes.js'
 import favMarketRoutes from './routes/favmarket.routes.js'
 import userAllergiesRoutes from './routes/userallergies.routes.js'
+import followerRoutes from './routes/follower.routes.js'
+import notificationRoutes from './routes/notification.routes.js'
 
 const app = express();
 app.use(cors())
@@ -67,6 +69,8 @@ app.use(shoppingListRoutes)
 app.use(favBrandRoutes)
 app.use(favMarketRoutes)
 app.use(userAllergiesRoutes)
+app.use(followerRoutes)
+app.use(notificationRoutes)
 
 /**
  *Middleware for when routes were not found, returns a 404 state
