@@ -9,13 +9,13 @@ const router = Router()
  */
 router.get('/followers', getFollowers)
 
-router.get('/notifications/:id', getFollower)
+router.get('/followers/:id', getFollower)
 
-router.post('/notifications', createFollower)
+router.post('/followers', createFollower)
 
-router.patch('/notifications/:id', updateFollower)
+router.patch('/followers/:id', updateFollower)
 
-router.delete('/notifications/:id', deleteFollower)
+router.delete('/followers/:id', deleteFollower)
 
 
 export default router
