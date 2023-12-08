@@ -185,3 +185,17 @@ export const checkExistingUserByMail = async (req, res) => {
     })
   } 
 }
+
+
+export const getUserEncryptedPassword = async (req, res) => {
+
+  try{
+    const salt = bcrypt.genSaltSync(10);
+    const hash = req.body.password = bcrypt.hashSync(req.body.password, salt);
+    return res.status(200).json(hash)
+  } catch(error){
+    return res.status(500).json({
+      message: 'Something went wrong while retrieving the encrypted password'
+    })
+  } 
+}
