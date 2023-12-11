@@ -1,5 +1,5 @@
 import {Router} from 'express'
-import { getFollowers, getFollower, createFollower, updateFollower, deleteFollower } from '../controllers/follower.controller.js'
+import { getFollowers, getFollower, createFollower, updateFollower, deleteFollower, getFollowedAndFollower } from '../controllers/follower.controller.js'
 
 
 const router = Router()
@@ -16,6 +16,8 @@ router.post('/followers', createFollower)
 router.patch('/followers/:id', updateFollower)
 
 router.delete('/followers/:id', deleteFollower)
+
+router.get('/followers/:idFollowed/:idFollower', getFollowedAndFollower)
 
 
 export default router
