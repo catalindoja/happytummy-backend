@@ -82,7 +82,7 @@ export const updateFollower = async (req, res) => {
 export const getFollowedAndFollower = async (req, res) => {
     try {
         const [rows] = await pool.query('SELECT * FROM follower WHERE idFollowed = ? AND idFollower = ?', [req.params.idFollowed, req.params.idFollower])
-        res.json(rows[0])
+        res.json(rows)
     } catch (error) {
         return res.status(500).json({
             message: 'Something went wrong while retrieving the follower'
